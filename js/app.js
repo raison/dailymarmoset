@@ -1,4 +1,13 @@
+// Initialize the angular app, and include libraries for mobile-swiping and carousel-building
+
 var app = angular.module('myApp', ['ngTouch', 'angular-carousel']);
+/*
+* This is a pretty simple app so one controller will do the trick.  It contains a function to
+* get the json from the server, unpack it, and bind it to the view where it gets looped out
+* twice for mobile and desktop contexts.
+* It also contains a function to filter the data by tag and refresh the scope.  This function
+* is placed in the root scope so that the filter directive can access it.
+*/
 app.controller('main', ['$scope', '$window', '$http', '$rootScope', function($scope, $window, $http, $rootScope) {
     var imgPath = "images/thumbs/";
     $scope.getSlides = function(page) {
@@ -39,13 +48,14 @@ app.controller('main', ['$scope', '$window', '$http', '$rootScope', function($sc
         $scope.$apply(function() {
             $scope.mobileSlides = $scope.filteredSlides;
             $scope.desktopSlides = $scope.filteredSlides;
-            $scope.data = {};
             $scope.carouselIndex = 0;
         });
     }
     $scope.getSlides(1);
 }]);
 
+// This directive places information about scroll position into the scope.
+// The snazzy / sticky / scrolly header uses it.
 app.directive("ngdWatchScroll", function($window) {
     return function(scope, element, attrs) {
         angular.element($window).bind("scroll", function() {
@@ -58,6 +68,7 @@ app.directive("ngdWatchScroll", function($window) {
     };
 });
 
+// This does the fancy bg image placement
 app.directive("ngdBg", function($window) {
     return function(scope, element, attrs) {
         var screenWidth = angular.element($window)[0].screen.availWidth;
@@ -69,6 +80,8 @@ app.directive("ngdBg", function($window) {
     };
 });
 
+//  This is attached to the text input box, and attaches a listener to its keyup event.
+//  When typing happens, it sends the text to the filter function in the main controller.
 app.directive("ngdTagFilter", function($rootScope) {
     return function(scope, element, attrs) {
         angular.element(element).bind("keyup", function() {
