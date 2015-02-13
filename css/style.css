@@ -59,9 +59,343 @@ textarea {
 }
 
 footer {
-    background: transparent;
+    background: #ccc;
 }
 
 a {
     text-decoration: none;
 }
+
+/**
+ * custom classes 
+ */
+/* ---- width/height ---- */
+.h-100 {
+    height: 100%;
+}
+
+.h-75 {
+    height: 50%;
+}
+
+.h-50 {
+    height: 50%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.vw-100 {
+    width: 100vw;
+} /* viewport height: 100% */
+.vw-75 {
+    width: 75vw;
+} /* viewport height: 100% */
+.vw-50 {
+    width: 50vw;
+} /* viewport height: 100% */
+.vh-100 {
+    height: 100vh;
+} /* viewport width: 100% */
+.vh-75 {
+    height: 75vh;
+} /* viewport width: 100% */
+.vh-50 {
+    height: 50vh;
+} /* viewport height: 50% */
+
+/* ---- position/alignment ---- */
+.pos-absolute {
+    position: absolute;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.pos-fixed {
+    position: fixed;
+} /* fixed to window, not to document */
+.align-bottom {
+    z-index: -1;
+} /* on the bottom of stack */
+.align-top {
+    z-index: 3000;
+} /* on the top of stack */
+.pos-fixed.align-top {
+    z-index: 3001;
+} /* on the top of stack */
+
+/* ---- background ---- */
+.bg-cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+/* ---- text ---- */
+.txt-white {
+    color: #fff;
+}
+
+.txt-shadow {
+    text-shadow: 0px 1px 1px #333;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+/* ---- NOs ---- */
+.no-overflow {
+    overflow: hidden;
+}
+
+.no-style {
+    list-style: none;
+}
+
+/* ---- clear float ---- */
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ---- flexbox layout ---- */
+.flex-vertical {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+.flex-h-start, .flex-h-left {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+}
+
+.flex-h-end, .flex-h-right {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+.flex-h-center {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flex-h-space-between {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.flex-h-space-around {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+.flex-v-start, .flex-v-top {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.flex-v-end, .flex-v-bottom {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+.flex-v-center {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flex-v-space-between {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-align-content: space-between;
+    align-content: space-between;
+}
+
+.flex-v-space-around {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-align-content: space-around;
+    align-content: space-around;
+}
+
+/**
+ *  site-specific styles
+ */ 
+.wrapper {
+    width: 90%;
+    max-width: 1162px;
+    margin: 0 auto;
+    padding: 1em 5% 1em 5%;
+}
+
+.header-container.half-scrolled {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-container.half-scrolled,
+.header-container.half-scrolled a {
+    color: #333;
+}
+
+.header-container:not(.half-scrolled),
+.header-container:not(.half-scrolled) a {
+    color: #fff;
+}
+
+.header-container nav a {
+    display: block;
+    font-weight: bold;
+    padding: 0 1em;
+}
+
+.headline {
+    color: #336502;
+}
+#desktopArticles {
+padding:20px;
+}
+.article-wrap, #mobileScroller {
+    background-color: #fdfeec;
+}
+
+.article-wrap img {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.article-container {
+    margin: 0 0 20px 0;
+}
+#mobileScroller {
+margin: 0 0 20px 0;
+}
+/* ---- Angular needs this to manage cloaking on elements that may cause flash of template statements ---- */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: solid 1px #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="text"].focus {
+    border: solid 1px #707070;
+    box-shadow: 0 0 5px 1px #969696;
+}
+#mobileScroller, #mobileScroller ul, #mobileScroller ul li {
+  height: 275px;
+}
+#mobileScroller ul li {
+	margin: 20px;
+	padding-right:20px;
+}
+
+
+
+
+
+
+input[type=range] {
+  width: 300px; }
+
+ul[rn-carousel] {
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+  position: relative;
+  -webkit-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y; }
+  ul[rn-carousel] > li {
+    color: black;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: visible;
+    vertical-align: top;
+    position: absolute;
+    left: 0;
+    right: 0;
+    white-space: normal;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    display: inline-block; }
+
+/* prevent flickering when moving buffer */
+ul[rn-carousel-buffered] > li {
+  display: none; }
+
+ul[rn-carousel-transition="hexagon"] {
+  overflow: visible; }
+
+/* indicators */
+div.rn-carousel-indicator span {
+  cursor: pointer;
+  color: #666; }
+  div.rn-carousel-indicator span.active {
+    color: white; }
+
+/* prev/next controls */
+.rn-carousel-control {
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  font-size: 2rem;
+  position: absolute;
+  top: 40%;
+  opacity: 0.75;
+  cursor: pointer; }
+  .rn-carousel-control:hover {
+    opacity: 1; }
+  .rn-carousel-control.rn-carousel-control-prev {
+    left: 0.5em; }
+    .rn-carousel-control.rn-carousel-control-prev:before {
+      content: "<"; }
+  .rn-carousel-control.rn-carousel-control-next {
+    right: 0.5em; }
+    .rn-carousel-control.rn-carousel-control-next:before {
+      content: ">"; }

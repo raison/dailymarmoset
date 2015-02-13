@@ -23,9 +23,11 @@
     <link rel="stylesheet" media="(max-width: 767px)" href="css/mobile.css" />
     <link rel="stylesheet" media="(min-width: 768px)" href="css/desktop.css" />
     <link rel="stylesheet" media="print" href="css/print.css" />
+
+    <!-- javascript -->
     <!--[if lt IE 9]>
     <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 </head>
 
 <body>
@@ -35,7 +37,73 @@
       Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
     </p>
   <![endif]-->
-  	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <div class="header-container pos-fixed w-100 align-top">
+        <div ng-include="'header.html'"></div>
+    </div>
+
+    <article class="intro-container bg-cover txt-white flex-vertical pos-fixed w-100 vh-100 flex-h-center align-bottom">
+        <section class="flex-h-center flex-v-center" style="flex:1">
+            <div class="wrapper txt-center blurb">
+                <h3>
+        The web's #1 source for everything Marmoset.
+        </h3>
+            </div>
+        </section>
+        <section class="flex-h-center clearfix">
+            <i class="fa fa-chevron-down fa-2x"></i>
+        </section>
+    </article>
+    <div class="w-100 vh-100">
+    </div>
+
+    <article class="main-container bg-white h-100">
+        <header>
+            <div class="wrapper txt-center">
+                <h1>Top Stories</h1>
+                <div id="filterbox">
+                    <form action="#">
+                        <input class="w-100" type="text" name="dynasearch" value="" id="dynasearch" placeholder="start typing a tag to filter stories" />
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <section id="mobileScroller">
+
+            <ul class="clearfix w-100 no-style" id="slideContainer">
+                <li class="pull-left article-wrap">
+
+                    <h2><a href="#"><img src="" class="article-thumb" alt=""><span class="headline"></span></a></h2>
+                    <p></p>
+                    <p></p>
+                    <p><span class="tag"></span>
+                    </p>
+
+
+                </li>
+            </ul>
+        </section>
+        <section id="desktopArticles">
+            <ul class="bg-white no-style" id="articleContainer">
+                <li class="clearfix article-container">
+                    <div class="wrapper article-wrap">
+
+                        <a href="#"><h2><img src="" class="article-thumb" alt=""><span class="headline"></span></h2></a>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </article>
+    <footer>
+        <div class="wrapper clearfix">
+            <div class="pull-left"></div>
+            <div class="pull-right"></div>
+        </div>
+    </footer>
+    <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/angular.min.js"></script>
     <script src="js/vendor/angular-touch.min.js"></script>
     <script src="js/vendor/angular-carousel.js"></script>
