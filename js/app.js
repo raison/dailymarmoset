@@ -16,7 +16,7 @@ app.controller('main', ['$scope', '$window', '$http', '$rootScope', function($sc
         $http.get(url).then(function(result) {
             if (result.data.length > 0) {
                 for (var i = 0; i < result.data.length; i++) {
-                    thisSlide = {};
+                    var thisSlide = {};
                     thisSlide.headline = result.data[i].headline;
                     thisSlide.img = imgPath + result.data[i].img;
                     thisSlide.description = result.data[i].description;
