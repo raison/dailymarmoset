@@ -1,401 +1,290 @@
 * {
-    box-sizing: border-box;
+box-sizing:border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #333;
+html,body {
+margin:0;
+padding:0;
 }
 
 body {
-    font: 400 16px/1.667 "Open Sans",sans-serif;
-    font-size: 1em;
-    line-height: 1.54;
-    background-color: #fff;
-}
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+font:400 16px/1.667 "Open Sans",sans-serif;
+font-size:1em;
+line-height:1.54;
+background-color:#fff;
 }
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+display:block;
+height:1px;
+border:0;
+border-top:1px solid #ccc;
+margin:1em 0;
+padding:0;
 }
 
-audio,
-canvas,
-img,
-video {
-    vertical-align: middle;
+audio,canvas,img,video {
+vertical-align:middle;
 }
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+border:0;
+margin:0;
+padding:0;
 }
 
 textarea {
-    resize: vertical;
+resize:vertical;
 }
 
 footer {
-    background: #ccc;
+background:#ccc;
 }
 
 a {
-    text-decoration: none;
+text-decoration:none;
 }
 
-/**
- * custom classes 
- */
-/* ---- width/height ---- */
 .h-100 {
-    height: 100%;
-}
-
-.h-75 {
-    height: 50%;
-}
-
-.h-50 {
-    height: 50%;
+height:100%;
 }
 
 .w-100 {
-    width: 100%;
+width:100%;
 }
 
 .w-75 {
-    width: 75%;
+width:75%;
 }
 
 .w-50 {
-    width: 50%;
+width:50%;
 }
 
 .vw-100 {
-    width: 100vw;
-} /* viewport height: 100% */
-.vw-75 {
-    width: 75vw;
-} /* viewport height: 100% */
-.vw-50 {
-    width: 50vw;
-} /* viewport height: 100% */
-.vh-100 {
-    height: 100vh;
-} /* viewport width: 100% */
-.vh-75 {
-    height: 75vh;
-} /* viewport width: 100% */
-.vh-50 {
-    height: 50vh;
-} /* viewport height: 50% */
+width:100vw;
+}
 
-/* ---- position/alignment ---- */
+.vw-75 {
+width:75vw;
+}
+
+.vw-50 {
+width:50vw;
+}
+
+.vh-100 {
+height:100vh;
+}
+
+.vh-75 {
+height:75vh;
+}
+
+.vh-50 {
+height:50vh;
+}
+
 .pos-absolute {
-    position: absolute;
+position:absolute;
 }
 
 .pos-relative {
-    position: relative;
+position:relative;
 }
 
 .pos-fixed {
-    position: fixed;
-} /* fixed to window, not to document */
-.align-bottom {
-    z-index: -1;
-} /* on the bottom of stack */
-.align-top {
-    z-index: 3000;
-} /* on the top of stack */
-.pos-fixed.align-top {
-    z-index: 3001;
-} /* on the top of stack */
+position:fixed;
+}
 
-/* ---- background ---- */
+.align-bottom {
+z-index:-1;
+}
+
+.align-top {
+z-index:3000;
+}
+
+.pos-fixed.align-top {
+z-index:3001;
+}
+
 .bg-cover {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+background-position:center center;
+background-repeat:no-repeat;
+background-size:cover;
 }
 
 .bg-white {
-    background-color: #fff;
-}
-
-/* ---- text ---- */
-.txt-white {
-    color: #fff;
+background-color:#fff;
 }
 
 .txt-shadow {
-    text-shadow: 0px 1px 1px #333;
+text-shadow:0 1px 1px #333;
 }
 
 .txt-center {
-    text-align: center;
+text-align:center;
 }
 
-/* ---- NOs ---- */
 .no-overflow {
-    overflow: hidden;
+overflow:hidden;
 }
 
 .no-style {
-    list-style: none;
+list-style:none;
 }
 
-/* ---- clear float ---- */
-.clearfix:before, .clearfix:after {
-    content: " ";
-    display: table;
+.clearfix:before,.clearfix:after {
+content:" ";
+display:table;
 }
 
 .clearfix:after {
-    clear: both;
+clear:both;
 }
 
-/* ---- flexbox layout ---- */
 .flex-vertical {
-    flex-direction: column;
-    -webkit-flex-direction: column;
+flex-direction:column;
+-webkit-flex-direction:column;
 }
 
-.flex-h-start, .flex-h-left {
-    display: flex;
-    display: -webkit-flex;
-    justify-content: flex-start;
-    -webkit-justify-content: flex-start;
+.flex-h-start,.flex-h-left {
+display:0;
+justify-content:flex-start;
+-webkit-justify-content:flex-start;
 }
 
-.flex-h-end, .flex-h-right {
-    display: flex;
-    display: -webkit-flex;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
+.flex-h-end,.flex-h-right {
+display:0;
+-webkit-justify-content:flex-end;
+justify-content:flex-end;
 }
 
 .flex-h-center {
-    display: flex;
-    display: -webkit-flex;
-    -webkit-justify-content: center;
-    justify-content: center;
+display:0;
+-webkit-justify-content:center;
+justify-content:center;
 }
 
 .flex-h-space-between {
-    display: flex;
-    display: -webkit-flex;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
+display:0;
+-webkit-justify-content:space-between;
+justify-content:space-between;
 }
 
 .flex-h-space-around {
-    display: flex;
-    display: -webkit-flex;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
+display:0;
+-webkit-justify-content:space-around;
+justify-content:space-around;
 }
 
-.flex-v-start, .flex-v-top {
-    display: flex;
-    display: -webkit-flex;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
+.flex-v-start,.flex-v-top {
+display:0;
+-webkit-align-items:flex-start;
+align-items:flex-start;
 }
 
-.flex-v-end, .flex-v-bottom {
-    display: flex;
-    display: -webkit-flex;
-    -webkit-align-items: flex-end;
-    align-items: flex-end;
+.flex-v-end,.flex-v-bottom {
+display:0;
+-webkit-align-items:flex-end;
+align-items:flex-end;
 }
 
 .flex-v-center {
-    display: flex;
-    display: -webkit-flex;
-    -webkit-align-items: center;
-    align-items: center;
+display:0;
+-webkit-align-items:center;
+align-items:center;
 }
 
 .flex-v-space-between {
-    display: flex;
-    display: -webkit-flex;
-    -webkit-align-content: space-between;
-    align-content: space-between;
+display:0;
+-webkit-align-content:space-between;
+align-content:space-between;
 }
 
 .flex-v-space-around {
-    display: flex;
-    display: -webkit-flex;
-    -webkit-align-content: space-around;
-    align-content: space-around;
+display:0;
+-webkit-align-content:space-around;
+align-content:space-around;
 }
 
-/**
- *  site-specific styles
- */ 
 .wrapper {
-    width: 90%;
-    max-width: 1162px;
-    margin: 0 auto;
-    padding: 1em 5% 1em 5%;
+width:90%;
+max-width:1162px;
+margin:0 auto;
+padding:1em 5%;
 }
 
 .header-container.half-scrolled {
-    background: #fff;
-    border-bottom: 1px solid #ccc;
-}
-
-.header-container.half-scrolled,
-.header-container.half-scrolled a {
-    color: #333;
-}
-
-.header-container:not(.half-scrolled),
-.header-container:not(.half-scrolled) a {
-    color: #fff;
+background:#fff;
+border-bottom:1px solid #ccc;
 }
 
 .header-container nav a {
-    display: block;
-    font-weight: bold;
-    padding: 0 1em;
+display:block;
+font-weight:700;
+padding:0 1em;
 }
 
 .headline {
-    color: #336502;
+color:#336502;
 }
+
 #desktopArticles {
 padding:20px;
 }
-.article-wrap, #mobileScroller {
-    background-color: #fdfeec;
+
+.article-wrap,#mobileScroller {
+background-color:#fdfeec;
 }
 
 .article-wrap img {
-    float: left;
-    margin: 0 10px 0 0;
+float:left;
+margin:0 10px 0 0;
 }
 
-.article-container {
-    margin: 0 0 20px 0;
-}
-#mobileScroller {
-margin: 0 0 20px 0;
-}
-/* ---- Angular needs this to manage cloaking on elements that may cause flash of template statements ---- */
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none !important;
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak {
+display:none!important;
 }
 
 input[type="text"] {
-    padding: 10px;
-    border: solid 1px #dcdcdc;
-    transition: box-shadow 0.3s, border 0.3s;
+border:solid 1px #dcdcdc;
+transition:box-shadow .3s border .3s;
+padding:10px;
 }
 
-input[type="text"]:focus,
-input[type="text"].focus {
-    border: solid 1px #707070;
-    box-shadow: 0 0 5px 1px #969696;
+input[type="text"]:focus,input[type="text"].focus {
+border:solid 1px #707070;
+box-shadow:0 0 5px 1px #969696;
 }
-#mobileScroller, #mobileScroller ul, #mobileScroller ul li {
-  height: 275px;
+
+#mobileScroller,#mobileScroller ul,#mobileScroller ul li {
+height:275px;
 }
+
 #mobileScroller ul li {
-	margin: 20px;
-	padding-right:20px;
+padding-right:20px;
+margin:20px;
 }
 
+html,button,input,select,textarea,.header-container.half-scrolled,.header-container.half-scrolled a {
+color:#333;
+}
 
+::-moz-selection,::selection {
+background:#b3d4fc;
+text-shadow:none;
+}
 
+.h-75,.h-50 {
+height:50%;
+}
 
+.txt-white,.header-container:not(.half-scrolled),.header-container:not(.half-scrolled) a {
+color:#fff;
+}
 
-
-input[type=range] {
-  width: 300px; }
-
-ul[rn-carousel] {
-  overflow: hidden;
-  padding: 0;
-  white-space: nowrap;
-  position: relative;
-  -webkit-perspective: 1000px;
-  -ms-perspective: 1000px;
-  perspective: 1000px;
-  -ms-touch-action: pan-y;
-  touch-action: pan-y; }
-  ul[rn-carousel] > li {
-    color: black;
-    -webkit-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
-    overflow: visible;
-    vertical-align: top;
-    position: absolute;
-    left: 0;
-    right: 0;
-    white-space: normal;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    width: 100%;
-    height: 100%;
-    display: inline-block; }
-
-/* prevent flickering when moving buffer */
-ul[rn-carousel-buffered] > li {
-  display: none; }
-
-ul[rn-carousel-transition="hexagon"] {
-  overflow: visible; }
-
-/* indicators */
-div.rn-carousel-indicator span {
-  cursor: pointer;
-  color: #666; }
-  div.rn-carousel-indicator span.active {
-    color: white; }
-
-/* prev/next controls */
-.rn-carousel-control {
-  -webkit-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  font-size: 2rem;
-  position: absolute;
-  top: 40%;
-  opacity: 0.75;
-  cursor: pointer; }
-  .rn-carousel-control:hover {
-    opacity: 1; }
-  .rn-carousel-control.rn-carousel-control-prev {
-    left: 0.5em; }
-    .rn-carousel-control.rn-carousel-control-prev:before {
-      content: "<"; }
-  .rn-carousel-control.rn-carousel-control-next {
-    right: 0.5em; }
-    .rn-carousel-control.rn-carousel-control-next:before {
-      content: ">"; }
+.article-container,#mobileScroller {
+margin:0 0 20px;
+}

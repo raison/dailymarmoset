@@ -1,40 +1,43 @@
 .header-container header .logo {
-  font-size: 2em;
-}
-.header-container header .mobile-nav {
-  display: none;
+font-size:2em;
 }
 
 .header-container header {
-  background: transparent;
-  color: #fff;
+background:transparent;
+color:#fff;
 }
+
 .header-container header .menus {
-  float:right;
+float:right;
 }
+
 .header-container header .menus li {
-  display: inline-block;
-  padding: 0px 1em;
+display:inline-block;
+padding:0 1em;
 }
 
 .intro-container {
-  background-image: url(../images/intro-md.jpg);
-}
-.blurb {
-  margin-top: 300px;
-}
-.logoimg {
-  position: absolute;
-  height: 150px;
-  margin-left: -80px;
-}
-.article-thumb {
-  margin-right: 10px;
-}
-section#mobileScroller {
-  display:none;
-}
-section#desktopArticles {
-  display:block;
+background-image:url(../images/intro-md.jpg);
 }
 
+.blurb {
+margin-top:300px;
+}
+
+.logoimg {
+position:absolute;
+height:150px;
+margin-left:-80px;
+}
+
+.article-thumb {
+margin-right:10px;
+}
+
+section#desktopArticles {
+display:block;
+}
+
+.header-container header .mobile-nav,section#mobileScroller {
+display:none;
+}
