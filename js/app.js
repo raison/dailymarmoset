@@ -45,6 +45,7 @@ app.controller('main', ['$scope', '$window', '$http', '$rootScope', function($sc
     }
     $scope.getSlides(1);
 }]);
+
 app.directive("ngdWatchScroll", function($window) {
     return function(scope, element, attrs) {
         angular.element($window).bind("scroll", function() {
@@ -65,5 +66,14 @@ app.directive("ngdBg", function($window) {
             url = attrs.ngdBgMd;
         }
         element.css('backgroundImage', "url(" + url + ")");
+    };
+});
+
+app.directive("ngdTagFilter", function($rootScope) {
+    return function(scope, element, attrs) {
+        angular.element(element).bind("keyup", function() {
+            var filter = element.val();
+            $rootScope.filterSlides(filter);
+        });
     };
 });
