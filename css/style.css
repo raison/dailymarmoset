@@ -288,3 +288,7 @@ color:#fff;
 .article-container,#mobileScroller {
 margin:0 0 20px;
 }
+
+.menus ul {
+float:right;
+}
