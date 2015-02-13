@@ -37,7 +37,7 @@
       Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
     </p>
   <![endif]-->
-    <div class="header-container pos-fixed w-100 align-top">
+    <div class="header-container pos-fixed w-100 align-top" ng-class="{'half-scrolled': winTop/winHeight > 0.5}">
         <div ng-include="'header.html'"></div>
     </div>
 
@@ -62,7 +62,7 @@
                 <h1>Top Stories</h1>
                 <div id="filterbox">
                     <form action="#">
-                        <input class="w-100" type="text" name="dynasearch" value="" id="dynasearch" placeholder="start typing a tag to filter stories" />
+                        <input ngd-tag-filter class="w-100" type="text" name="dynasearch" value="" id="dynasearch" placeholder="start typing a tag to filter stories" />
                     </form>
                 </div>
             </div>
@@ -70,13 +70,13 @@
 
         <section id="mobileScroller">
 
-            <ul class="clearfix w-100 no-style" id="slideContainer">
-                <li class="pull-left article-wrap">
+            <ul rn-carousel rn-carousel-index="carouselIndex" class="clearfix w-100 no-style" id="slideContainer">
+                <li class="pull-left article-wrap" ng-repeat="slide in mobileSlides" data-tags="{{ slide.tagtext }}">
 
-                    <h2><a href="#"><img src="" class="article-thumb" alt=""><span class="headline"></span></a></h2>
-                    <p></p>
-                    <p></p>
-                    <p><span class="tag"></span>
+                    <h2><a href="#"><img ng-src="{{ slide.img }}" class="article-thumb" ng-alt="{{ slide.headline }}"><span ng-bind="slide.headline" class="headline"></span></a></h2>
+                    <p ng-bind="slide.date"></p>
+                    <p ng-bind="slide.description"></p>
+                    <p ng-cloak ng-show="slide.tagtext.length"><span class="tag" ng-bind="slide.tagtext" ng-bind="tag"></span>
                     </p>
 
 
@@ -85,13 +85,13 @@
         </section>
         <section id="desktopArticles">
             <ul class="bg-white no-style" id="articleContainer">
-                <li class="clearfix article-container">
+                <li class="clearfix article-container" ng-repeat="slide in desktopSlides" data-tags="{{ slide.tagtext }}">
                     <div class="wrapper article-wrap">
 
-                        <a href="#"><h2><img src="" class="article-thumb" alt=""><span class="headline"></span></h2></a>
-                        <p></p>
-                        <p></p>
-                        <p></p>
+                        <a href="#"><h2><img ng-src="{{ slide.img }}" class="article-thumb" ng-alt="{{ slide.headline }}"><span ng-bind="slide.headline" class="headline"></span></h2></a>
+                        <p ng-bind="slide.date"></p>
+                        <p ng-bind="slide.description"></p>
+                        <p ng-bind="slide.tagtext"></p>
                     </div>
                 </li>
             </ul>
