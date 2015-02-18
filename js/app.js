@@ -14,7 +14,7 @@ app.controller('main', ['$scope', '$window', '$http', '$rootScope', function($sc
         $scope.allSlides = new Array();
         var url = "page" + page + ".json";
         $http.get(url).then(function(result) {
-            if (result.data.length > 0) {
+            if (result.data && result.data.length > 0) {
                 for (var i = 0; i < result.data.length; i++) {
                     var thisSlide = {};
                     thisSlide.headline = result.data[i].headline;
@@ -27,7 +27,9 @@ app.controller('main', ['$scope', '$window', '$http', '$rootScope', function($sc
                 }
                 $scope.desktopSlides = $scope.allSlides;
                 $scope.mobileSlides = $scope.allSlides;
-            } else {}
+            } else {
+            	console.log("no stories available");
+            }
         }, function(e) {
             console.log(e);
         });

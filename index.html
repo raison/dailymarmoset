@@ -72,7 +72,7 @@
                     <h2><a href="#"><img data-ng-src="{{ slide.img }}" class="article-thumb" data-ng-alt="{{ slide.headline }}"><span data-ng-bind="slide.headline" class="headline"></span></a></h2>
                     <p data-ng-bind="slide.date"></p>
                     <p data-ng-bind="slide.description"></p>
-                    <p data-ng-cloak data-ng-show="slide.tagtext.length"><span class="tag" data-ng-bind="slide.tagtext" data-ng-bind="tag"></span>
+                    <p data-ng-cloak data-ng-show="slide.tagtext.length"><span class="tag" data-ng-bind="slide.tagtext"></span>
                     </p>
 
 
@@ -88,7 +88,8 @@
                         <a href="#"><h2><img data-ng-src="{{ slide.img }}" class="article-thumb" data-ng-alt="{{ slide.headline }}"><span data-ng-bind="slide.headline" class="headline"></span></h2></a>
                         <p data-ng-bind="slide.date"></p>
                         <p data-ng-bind="slide.description"></p>
-                        <p data-ng-bind="slide.tagtext"></p>
+                    	<p data-ng-cloak data-ng-show="slide.tagtext.length"><span class="tag" data-ng-bind="slide.tagtext"></span>
+                    	</p>
                     </div>
                 </li>
             </ul>
