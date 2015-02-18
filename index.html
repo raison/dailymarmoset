@@ -31,7 +31,7 @@
   <![endif]-->
 </head>
 <!-- scroll-watch directive attached to body here, and assigning the main controller to the whole page. -->
-<body ng-app="myApp" ngd-watch-scroll ng-controller="main">
+<body data-ng-app="myApp" data-ngd-watch-scroll data-ng-controller="main">
     <!--[if lt IE 7]>
     <p class="browsehappy">
       You are using an <strong>outdated</strong> browser.
@@ -39,11 +39,12 @@
     </p>
   <![endif]-->
   <!-- here's a little trick to make the header use the scroll-watch info to be all cool -->
-    <div class="header-container pos-fixed w-100 align-top" ng-class="{'half-scrolled': winTop/winHeight > 0.5}">
+    <div class="header-container pos-fixed w-100 align-top" data-ng-class="{'half-scrolled': winTop/winHeight > 0.5}">
         <div ng-include="'header.html'"></div>
     </div>
 
     <article class="intro-container bg-cover txt-white flex-vertical pos-fixed w-100 vh-100 flex-h-center align-bottom">
+
         <section class="flex-h-center clearfix txt-center pos-absolute w-100 scrolldown">
             <i class="fa fa-chevron-down fa-2x"></i>
         </section>
@@ -57,7 +58,7 @@
                 <h1>Top Stories</h1>
                 <div id="filterbox">
                     <form action="#">
-                        <input ngd-tag-filter class="w-100" type="text" name="dynasearch" value="" id="dynasearch" placeholder="start typing a tag to filter stories" />
+                        <input data-ngd-tag-filter class="w-100" type="text" name="dynasearch" value="" id="dynasearch" placeholder="start typing a tag to filter stories" />
                     </form>
                 </div>
             </div>
@@ -68,10 +69,10 @@
             <ul rn-carousel rn-carousel-index="carouselIndex" class="clearfix w-100 no-style" id="slideContainer">
                 <li class="pull-left article-wrap" ng-repeat="slide in mobileSlides" data-tags="{{ slide.tagtext }}">
 
-                    <h2><a href="#"><img ng-src="{{ slide.img }}" class="article-thumb" ng-alt="{{ slide.headline }}"><span ng-bind="slide.headline" class="headline"></span></a></h2>
-                    <p ng-bind="slide.date"></p>
-                    <p ng-bind="slide.description"></p>
-                    <p ng-cloak ng-show="slide.tagtext.length"><span class="tag" ng-bind="slide.tagtext" ng-bind="tag"></span>
+                    <h2><a href="#"><img data-ng-src="{{ slide.img }}" class="article-thumb" data-ng-alt="{{ slide.headline }}"><span data-ng-bind="slide.headline" class="headline"></span></a></h2>
+                    <p data-ng-bind="slide.date"></p>
+                    <p data-ng-bind="slide.description"></p>
+                    <p data-ng-cloak data-ng-show="slide.tagtext.length"><span class="tag" data-ng-bind="slide.tagtext" data-ng-bind="tag"></span>
                     </p>
 
 
@@ -81,13 +82,13 @@
         <!-- here is the desktop view of the data with a similar binding, but different style and layout. -->
         <section id="desktopArticles">
             <ul class="bg-white no-style" id="articleContainer">
-                <li class="clearfix article-container" ng-repeat="slide in desktopSlides" data-tags="{{ slide.tagtext }}">
+                <li class="clearfix article-container" data-ng-repeat="slide in desktopSlides" data-tags="{{ slide.tagtext }}">
                     <div class="wrapper article-wrap">
 
-                        <a href="#"><h2><img ng-src="{{ slide.img }}" class="article-thumb" ng-alt="{{ slide.headline }}"><span ng-bind="slide.headline" class="headline"></span></h2></a>
-                        <p ng-bind="slide.date"></p>
-                        <p ng-bind="slide.description"></p>
-                        <p ng-bind="slide.tagtext"></p>
+                        <a href="#"><h2><img data-ng-src="{{ slide.img }}" class="article-thumb" data-ng-alt="{{ slide.headline }}"><span data-ng-bind="slide.headline" class="headline"></span></h2></a>
+                        <p data-ng-bind="slide.date"></p>
+                        <p data-ng-bind="slide.description"></p>
+                        <p data-ng-bind="slide.tagtext"></p>
                     </div>
                 </li>
             </ul>
